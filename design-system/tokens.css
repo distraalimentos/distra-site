@@ -1,0 +1,125 @@
+/* ============================================================
+   DISTRA ALIMENTOS — DESIGN TOKENS
+   Sistema de design compartilhado entre site institucional,
+   portal de vendedores e demais projetos da marca.
+
+   Importe este arquivo no <head> antes do CSS da página:
+   <link rel="stylesheet" href="/design-system/tokens.css">
+   ============================================================ */
+
+:root {
+
+  /* ---------- CORES — MARCA ---------- */
+  --distra-navy:        #11111f;   /* Fundo escuro principal (hero, footer) */
+  --distra-navy-2:      #1a1f3a;   /* Azul institucional, navbar, títulos */
+  --distra-orange:      #f47421;   /* Laranja de marca, CTAs, destaques */
+  --distra-orange-2:    #e5651a;   /* Laranja hover/pressed */
+
+  /* ---------- CORES — NEUTRAS ---------- */
+  --distra-white:       #ffffff;
+  --distra-gray-50:     #f7f7f8;   /* Fundo de seção alternado */
+  --distra-gray-100:    #ebebed;   /* Bordas, divisores */
+  --distra-gray-400:    #9a9aaa;   /* Texto secundário, labels */
+  --distra-gray-700:    #44445a;   /* Texto de corpo sobre claro */
+
+  /* ---------- CORES — SEMÂNTICAS ---------- */
+  --distra-success:     #25d366;   /* WhatsApp, confirmações */
+  --distra-success-dk:  #1da851;
+  --distra-info:        #2563eb;   /* Links, informações */
+  --distra-warning:     #f59e0b;   /* Avisos */
+  --distra-danger:      #dc2626;   /* Erros, ações destrutivas */
+
+  /* ---------- TIPOGRAFIA — FAMÍLIAS ---------- */
+  --distra-font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --distra-font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ---------- TIPOGRAFIA — PESOS ---------- */
+  --distra-fw-regular:   400;
+  --distra-fw-medium:    500;
+  --distra-fw-semibold:  600;
+  --distra-fw-bold:      700;
+
+  /* ---------- TIPOGRAFIA — ESCALA ----------
+     Escala modular ~1.25 (major third), base 16px */
+  --distra-text-xs:      0.75rem;   /* 12px — labels, captions */
+  --distra-text-sm:      0.875rem;  /* 14px — texto auxiliar */
+  --distra-text-base:    1rem;      /* 16px — corpo */
+  --distra-text-lg:      1.125rem;  /* 18px — corpo destacado */
+  --distra-text-xl:      1.5rem;    /* 24px — subtítulos */
+  --distra-text-2xl:     2rem;      /* 32px — títulos de seção */
+  --distra-text-3xl:     2.75rem;   /* 44px — títulos grandes */
+  --distra-text-4xl:     4rem;      /* 64px — hero */
+
+  /* ---------- TIPOGRAFIA — ALTURA DE LINHA ---------- */
+  --distra-leading-tight:  1.1;     /* Títulos display */
+  --distra-leading-snug:   1.3;     /* Subtítulos */
+  --distra-leading-normal: 1.6;     /* Corpo de texto */
+
+  /* ---------- TIPOGRAFIA — ESPAÇAMENTO ENTRE LETRAS ---------- */
+  --distra-tracking-tight:  -0.02em;
+  --distra-tracking-normal: 0;
+  --distra-tracking-wide:   0.08em;  /* Eyebrows, labels caixa alta */
+  --distra-tracking-wider:  0.13em;
+
+  /* ---------- ESPAÇAMENTO ----------
+     Escala base 4px */
+  --distra-space-1:   0.25rem;   /* 4px */
+  --distra-space-2:   0.5rem;    /* 8px */
+  --distra-space-3:   0.75rem;   /* 12px */
+  --distra-space-4:   1rem;      /* 16px */
+  --distra-space-6:   1.5rem;    /* 24px */
+  --distra-space-8:   2rem;      /* 32px */
+  --distra-space-12:  3rem;      /* 48px */
+  --distra-space-16:  4rem;      /* 64px */
+  --distra-space-20:  5rem;      /* 80px */
+  --distra-space-24:  6rem;      /* 96px */
+
+  /* ---------- RAIO DE BORDA ---------- */
+  --distra-radius-sm:    6px;
+  --distra-radius-md:    10px;
+  --distra-radius-lg:    14px;
+  --distra-radius-xl:    16px;
+  --distra-radius-pill:  50px;
+  --distra-radius-full:  9999px;
+
+  /* ---------- SOMBRAS ---------- */
+  --distra-shadow-sm:    0 1px 4px rgba(17,17,31,0.08);
+  --distra-shadow-md:    0 4px 20px rgba(17,17,31,0.10);
+  --distra-shadow-lg:    0 12px 40px rgba(0,0,0,0.08);
+  --distra-shadow-orange: 0 8px 28px rgba(244,116,33,0.35);
+  --distra-shadow-orange-sm: 0 6px 24px rgba(244,116,33,0.14);
+  --distra-shadow-success: 0 8px 28px rgba(37,211,102,0.5);
+
+  /* ---------- TRANSIÇÕES ---------- */
+  --distra-transition-fast:   0.15s ease;
+  --distra-transition-base:   0.22s ease;
+  --distra-transition-slow:   0.4s ease;
+
+  /* ---------- LAYOUT ---------- */
+  --distra-container-max:  1200px;
+  --distra-container-pad:  1.5rem;
+
+  /* ---------- BREAKPOINTS (referência) ----------
+     Use em @media. Não são aplicáveis via var() em media queries.
+     xl: 1100px | lg: 860px | md: 600px | sm: 520px */
+}
+
+/* ---------- RESET MÍNIMO + BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--distra-font-body);
+  font-size: var(--distra-text-base);
+  line-height: var(--distra-leading-normal);
+  color: var(--distra-gray-700);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Respeita preferência de redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

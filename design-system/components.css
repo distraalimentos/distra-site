@@ -1,0 +1,243 @@
+/* ============================================================
+   DISTRA ALIMENTOS — COMPONENTES
+   Componentes reutilizáveis baseados nos design tokens.
+   Requer tokens.css carregado antes.
+
+   <link rel="stylesheet" href="/design-system/tokens.css">
+   <link rel="stylesheet" href="/design-system/components.css">
+   ============================================================ */
+
+/* ============ CONTAINER ============ */
+.distra-container {
+  max-width: var(--distra-container-max);
+  margin: 0 auto;
+  padding-left: var(--distra-container-pad);
+  padding-right: var(--distra-container-pad);
+}
+
+/* ============ TIPOGRAFIA ============ */
+.distra-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--distra-space-2);
+  font-family: var(--distra-font-body);
+  font-size: var(--distra-text-xs);
+  font-weight: var(--distra-fw-bold);
+  letter-spacing: var(--distra-tracking-wide);
+  text-transform: uppercase;
+  color: var(--distra-orange);
+}
+.distra-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--distra-orange);
+}
+
+.distra-title {
+  font-family: var(--distra-font-display);
+  font-weight: var(--distra-fw-bold);
+  font-size: var(--distra-text-3xl);
+  line-height: var(--distra-leading-tight);
+  letter-spacing: var(--distra-tracking-tight);
+  text-transform: uppercase;
+  color: var(--distra-navy-2);
+  margin: 0;
+}
+
+.distra-subtitle {
+  font-family: var(--distra-font-body);
+  font-weight: var(--distra-fw-semibold);
+  font-size: var(--distra-text-xl);
+  line-height: var(--distra-leading-snug);
+  color: var(--distra-navy-2);
+  margin: 0;
+}
+
+.distra-lead {
+  font-size: var(--distra-text-lg);
+  line-height: var(--distra-leading-normal);
+  color: var(--distra-gray-700);
+}
+
+.distra-label {
+  font-size: var(--distra-text-xs);
+  font-weight: var(--distra-fw-bold);
+  letter-spacing: var(--distra-tracking-wide);
+  text-transform: uppercase;
+  color: var(--distra-gray-400);
+}
+
+/* ============ BOTÕES ============ */
+.distra-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--distra-space-2);
+  font-family: var(--distra-font-body);
+  font-size: var(--distra-text-sm);
+  font-weight: var(--distra-fw-bold);
+  letter-spacing: var(--distra-tracking-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--distra-radius-sm);
+  padding: 1rem 2.2rem;
+  cursor: pointer;
+  transition: background var(--distra-transition-base),
+              transform var(--distra-transition-base),
+              box-shadow var(--distra-transition-base);
+}
+
+/* Primário — laranja */
+.distra-btn--primary {
+  background: var(--distra-orange);
+  color: var(--distra-white);
+}
+.distra-btn--primary:hover {
+  background: var(--distra-orange-2);
+  transform: translateY(-2px);
+  box-shadow: var(--distra-shadow-orange);
+}
+
+/* Secundário — contorno */
+.distra-btn--secondary {
+  background: transparent;
+  color: var(--distra-navy-2);
+  border: 1.5px solid var(--distra-gray-100);
+}
+.distra-btn--secondary:hover {
+  border-color: var(--distra-orange);
+  color: var(--distra-orange);
+}
+
+/* Ghost — sobre fundo escuro */
+.distra-btn--ghost {
+  background: rgba(255,255,255,0.08);
+  color: var(--distra-white);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.distra-btn--ghost:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+/* Sucesso — WhatsApp */
+.distra-btn--success {
+  background: var(--distra-success);
+  color: var(--distra-white);
+}
+.distra-btn--success:hover {
+  background: var(--distra-success-dk);
+  transform: translateY(-2px);
+  box-shadow: var(--distra-shadow-success);
+}
+
+/* Tamanhos */
+.distra-btn--sm { padding: 0.6rem 1.4rem; font-size: var(--distra-text-xs); }
+.distra-btn--lg { padding: 1.2rem 2.8rem; font-size: var(--distra-text-base); }
+
+/* ============ CARDS ============ */
+.distra-card {
+  background: var(--distra-white);
+  border: 1.5px solid var(--distra-gray-100);
+  border-radius: var(--distra-radius-md);
+  padding: var(--distra-space-6);
+  transition: border-color var(--distra-transition-base),
+              transform var(--distra-transition-base),
+              box-shadow var(--distra-transition-base);
+}
+.distra-card--hover:hover {
+  border-color: var(--distra-orange);
+  transform: translateY(-3px);
+  box-shadow: var(--distra-shadow-orange-sm);
+}
+
+/* Card de métrica — com borda lateral laranja */
+.distra-card--metric {
+  border-left: 4px solid var(--distra-orange);
+}
+.distra-metric-number {
+  font-family: var(--distra-font-display);
+  font-size: var(--distra-text-2xl);
+  font-weight: var(--distra-fw-bold);
+  color: var(--distra-orange);
+  line-height: 1;
+  margin-bottom: var(--distra-space-1);
+}
+.distra-metric-label {
+  font-size: var(--distra-text-xs);
+  font-weight: var(--distra-fw-bold);
+  letter-spacing: var(--distra-tracking-wide);
+  text-transform: uppercase;
+  color: var(--distra-gray-400);
+  line-height: var(--distra-leading-normal);
+}
+
+/* ============ BADGE / TAG ============ */
+.distra-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--distra-space-1);
+  font-size: var(--distra-text-xs);
+  font-weight: var(--distra-fw-semibold);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--distra-radius-pill);
+  background: var(--distra-gray-50);
+  color: var(--distra-gray-700);
+}
+.distra-badge--orange { background: rgba(244,116,33,0.12); color: var(--distra-orange-2); }
+.distra-badge--success { background: rgba(37,211,102,0.12); color: var(--distra-success-dk); }
+
+/* ============ INPUT / FORM ============ */
+.distra-input {
+  width: 100%;
+  font-family: var(--distra-font-body);
+  font-size: var(--distra-text-base);
+  color: var(--distra-navy-2);
+  background: var(--distra-white);
+  border: 1.5px solid var(--distra-gray-100);
+  border-radius: var(--distra-radius-sm);
+  padding: 0.8rem 1rem;
+  transition: border-color var(--distra-transition-base);
+}
+.distra-input:focus {
+  outline: none;
+  border-color: var(--distra-orange);
+}
+.distra-input::placeholder { color: var(--distra-gray-400); }
+
+/* ============ SEÇÃO ============ */
+.distra-section {
+  padding-top: var(--distra-space-20);
+  padding-bottom: var(--distra-space-16);
+}
+.distra-section--dark {
+  background: var(--distra-navy);
+  color: var(--distra-white);
+}
+.distra-section--alt {
+  background: var(--distra-gray-50);
+}
+
+/* ============ ANIMAÇÃO REVEAL ============ */
+.distra-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.distra-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.distra-reveal--delay-1 { transition-delay: 0.1s; }
+.distra-reveal--delay-2 { transition-delay: 0.2s; }
+.distra-reveal--delay-3 { transition-delay: 0.3s; }
+
+/* ============ FOCUS VISÍVEL (acessibilidade) ============ */
+a:focus-visible,
+button:focus-visible,
+.distra-btn:focus-visible,
+.distra-input:focus-visible {
+  outline: 2px solid var(--distra-orange);
+  outline-offset: 2px;
+}

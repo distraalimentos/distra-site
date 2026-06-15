@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distra Alimentos — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  body { background: var(--distra-gray-50); }
+
+  /* Layout doc */
+  .ds-shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+  .ds-nav {
+    background: var(--distra-navy);
+    color: var(--distra-white);
+    padding: 2rem 1.5rem;
+    position: sticky; top: 0; height: 100vh;
+    overflow-y: auto;
+  }
+  .ds-nav-brand {
+    font-family: var(--distra-font-display);
+    font-size: 1.6rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.02em;
+    margin-bottom: 0.2rem;
+  }
+  .ds-nav-brand span { color: var(--distra-orange); }
+  .ds-nav-sub {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--distra-gray-400); margin-bottom: 2.5rem;
+  }
+  .ds-nav a {
+    display: block; color: rgba(255,255,255,0.7);
+    text-decoration: none; padding: 0.5rem 0;
+    font-size: 0.9rem; transition: color 0.2s;
+  }
+  .ds-nav a:hover { color: var(--distra-orange); }
+  .ds-nav-group { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--distra-gray-400); margin: 1.5rem 0 0.5rem; }
+
+  .ds-main { padding: 3rem 3.5rem; max-width: 1000px; }
+  .ds-header { margin-bottom: 3rem; }
+  .ds-header h1 {
+    font-family: var(--distra-font-display);
+    font-size: 3rem; font-weight: 700; text-transform: uppercase;
+    color: var(--distra-navy-2); margin: 0 0 0.5rem; line-height: 1;
+  }
+  .ds-header p { color: var(--distra-gray-700); font-size: 1.1rem; max-width: 560px; }
+
+  .ds-section { margin-bottom: 4rem; scroll-margin-top: 2rem; }
+  .ds-section > h2 {
+    font-family: var(--distra-font-display);
+    font-size: 1.8rem; font-weight: 700; text-transform: uppercase;
+    color: var(--distra-navy-2); margin: 0 0 0.4rem;
+    padding-bottom: 0.6rem; border-bottom: 2px solid var(--distra-gray-100);
+  }
+  .ds-section > p.desc { color: var(--distra-gray-700); margin: 0 0 1.5rem; }
+
+  /* Swatches */
+  .ds-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 1rem; }
+  .ds-swatch { border-radius: var(--distra-radius-md); overflow: hidden; border: 1px solid var(--distra-gray-100); background: #fff; }
+  .ds-swatch-color { height: 80px; }
+  .ds-swatch-info { padding: 0.7rem 0.8rem; }
+  .ds-swatch-name { font-weight: 600; font-size: 0.85rem; color: var(--distra-navy-2); }
+  .ds-swatch-hex { font-family: monospace; font-size: 0.75rem; color: var(--distra-gray-400); text-transform: uppercase; }
+  .ds-swatch-var { font-family: monospace; font-size: 0.68rem; color: var(--distra-gray-400); margin-top: 2px; }
+
+  /* Type specimens */
+  .ds-type-row { padding: 1rem 0; border-bottom: 1px solid var(--distra-gray-100); display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; }
+  .ds-type-meta { font-family: monospace; font-size: 0.72rem; color: var(--distra-gray-400); white-space: nowrap; }
+
+  /* Component demo */
+  .ds-demo { background: #fff; border: 1px solid var(--distra-gray-100); border-radius: var(--distra-radius-md);
+    padding: 2rem; margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .ds-demo--dark { background: var(--distra-navy); }
+  .ds-code { background: var(--distra-navy); color: #e0e0e8; font-family: monospace; font-size: 0.8rem;
+    padding: 1rem 1.2rem; border-radius: var(--distra-radius-sm); overflow-x: auto; margin: 0 0 2rem; }
+  .ds-code .tag { color: #ff9d5c; }
+  .ds-code .attr { color: #9ae6b4; }
+
+  .ds-spacing-bar { background: var(--distra-orange); height: 16px; border-radius: 3px; }
+  .ds-spacing-row { display: flex; align-items: center; gap: 1rem; padding: 0.4rem 0; }
+  .ds-spacing-label { font-family: monospace; font-size: 0.75rem; color: var(--distra-gray-700); width: 120px; }
+
+  .ds-radius-box { width: 90px; height: 90px; background: var(--distra-navy-2); display: flex;
+    align-items: flex-end; justify-content: center; padding: 0.5rem; }
+  .ds-radius-box span { font-family: monospace; font-size: 0.7rem; color: #fff; }
+
+  @media (max-width: 800px) {
+    .ds-shell { grid-template-columns: 1fr; }
+    .ds-nav { position: relative; height: auto; }
+    .ds-main { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="ds-shell">
+
+  <!-- NAV -->
+  <nav class="ds-nav">
+    <div class="ds-nav-brand">DISTRA<span>.</span></div>
+    <div class="ds-nav-sub">Design System</div>
+
+    <div class="ds-nav-group">Fundamentos</div>
+    <a href="#cores">Cores</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#espacamento">Espaçamento</a>
+    <a href="#raios">Raios &amp; Sombras</a>
+
+    <div class="ds-nav-group">Componentes</div>
+    <a href="#botoes">Botões</a>
+    <a href="#cards">Cards</a>
+    <a href="#badges">Badges</a>
+    <a href="#forms">Formulários</a>
+    <a href="#tipografia-comp">Texto</a>
+
+    <div class="ds-nav-group">Uso</div>
+    <a href="#como-usar">Como usar</a>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="ds-main">
+    <header class="ds-header">
+      <h1>Design System</h1>
+      <p>Sistema de design da Distra Alimentos. Tokens, componentes e diretrizes compartilhados entre o site institucional, o portal de vendedores e demais projetos da marca.</p>
+    </header>
+
+    <!-- CORES -->
+    <section class="ds-section" id="cores">
+      <h2>Cores</h2>
+      <p class="desc">A paleta combina o azul institucional (confiança, solidez B2B) com o laranja de marca (energia, ação). Use o laranja com restrição — apenas para CTAs e destaques.</p>
+
+      <h3 style="font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--distra-gray-400);">Marca</h3>
+      <div class="ds-swatches" style="margin-bottom:2rem;">
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#11111f"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Navy</div><div class="ds-swatch-hex">#11111F</div><div class="ds-swatch-var">--distra-navy</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#1a1f3a"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Navy 2</div><div class="ds-swatch-hex">#1A1F3A</div><div class="ds-swatch-var">--distra-navy-2</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#f47421"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Orange</div><div class="ds-swatch-hex">#F47421</div><div class="ds-swatch-var">--distra-orange</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#e5651a"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Orange 2</div><div class="ds-swatch-hex">#E5651A</div><div class="ds-swatch-var">--distra-orange-2</div></div></div>
+      </div>
+
+      <h3 style="font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--distra-gray-400);">Neutras</h3>
+      <div class="ds-swatches" style="margin-bottom:2rem;">
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#ffffff;border-bottom:1px solid #ebebed"></div><div class="ds-swatch-info"><div class="ds-swatch-name">White</div><div class="ds-swatch-hex">#FFFFFF</div><div class="ds-swatch-var">--distra-white</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#f7f7f8"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Gray 50</div><div class="ds-swatch-hex">#F7F7F8</div><div class="ds-swatch-var">--distra-gray-50</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#ebebed"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Gray 100</div><div class="ds-swatch-hex">#EBEBED</div><div class="ds-swatch-var">--distra-gray-100</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#9a9aaa"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Gray 400</div><div class="ds-swatch-hex">#9A9AAA</div><div class="ds-swatch-var">--distra-gray-400</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#44445a"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Gray 700</div><div class="ds-swatch-hex">#44445A</div><div class="ds-swatch-var">--distra-gray-700</div></div></div>
+      </div>
+
+      <h3 style="font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--distra-gray-400);">Semânticas</h3>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#25d366"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Success</div><div class="ds-swatch-hex">#25D366</div><div class="ds-swatch-var">--distra-success</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#2563eb"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Info</div><div class="ds-swatch-hex">#2563EB</div><div class="ds-swatch-var">--distra-info</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#f59e0b"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Warning</div><div class="ds-swatch-hex">#F59E0B</div><div class="ds-swatch-var">--distra-warning</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch-color" style="background:#dc2626"></div><div class="ds-swatch-info"><div class="ds-swatch-name">Danger</div><div class="ds-swatch-hex">#DC2626</div><div class="ds-swatch-var">--distra-danger</div></div></div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFIA -->
+    <section class="ds-section" id="tipografia">
+      <h2>Tipografia</h2>
+      <p class="desc"><strong>Barlow Condensed</strong> para títulos (condensada, forte, industrial — combina com distribuição/logística). <strong>Inter</strong> para corpo (legível, neutra, profissional).</p>
+
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-display);font-size:4rem;font-weight:700;text-transform:uppercase;line-height:1;color:var(--distra-navy-2);">Hero 4xl</span>
+        <span class="ds-type-meta">Barlow Condensed 700 · 64px<br>--distra-text-4xl</span>
+      </div>
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-display);font-size:2.75rem;font-weight:700;text-transform:uppercase;line-height:1;color:var(--distra-navy-2);">Título 3xl</span>
+        <span class="ds-type-meta">Barlow Condensed 700 · 44px<br>--distra-text-3xl</span>
+      </div>
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-display);font-size:2rem;font-weight:700;text-transform:uppercase;line-height:1;color:var(--distra-navy-2);">Seção 2xl</span>
+        <span class="ds-type-meta">Barlow Condensed 700 · 32px<br>--distra-text-2xl</span>
+      </div>
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-body);font-size:1.5rem;font-weight:600;color:var(--distra-navy-2);">Subtítulo xl</span>
+        <span class="ds-type-meta">Inter 600 · 24px<br>--distra-text-xl</span>
+      </div>
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-body);font-size:1.125rem;color:var(--distra-gray-700);">Corpo destacado (lead)</span>
+        <span class="ds-type-meta">Inter 400 · 18px<br>--distra-text-lg</span>
+      </div>
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-body);font-size:1rem;color:var(--distra-gray-700);">Corpo de texto padrão</span>
+        <span class="ds-type-meta">Inter 400 · 16px<br>--distra-text-base</span>
+      </div>
+      <div class="ds-type-row">
+        <span style="font-family:var(--distra-font-body);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--distra-gray-400);">Label / Eyebrow</span>
+        <span class="ds-type-meta">Inter 700 · 12px · uppercase<br>--distra-text-xs</span>
+      </div>
+    </section>
+
+    <!-- ESPAÇAMENTO -->
+    <section class="ds-section" id="espacamento">
+      <h2>Espaçamento</h2>
+      <p class="desc">Escala base de 4px. Use os tokens em paddings, margins e gaps para manter ritmo consistente.</p>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-1 · 4px</span><div class="ds-spacing-bar" style="width:4px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-2 · 8px</span><div class="ds-spacing-bar" style="width:8px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-4 · 16px</span><div class="ds-spacing-bar" style="width:16px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-6 · 24px</span><div class="ds-spacing-bar" style="width:24px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-8 · 32px</span><div class="ds-spacing-bar" style="width:32px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-12 · 48px</span><div class="ds-spacing-bar" style="width:48px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-16 · 64px</span><div class="ds-spacing-bar" style="width:64px"></div></div>
+      <div class="ds-spacing-row"><span class="ds-spacing-label">--distra-space-20 · 80px</span><div class="ds-spacing-bar" style="width:80px"></div></div>
+    </section>
+
+    <!-- RAIOS E SOMBRAS -->
+    <section class="ds-section" id="raios">
+      <h2>Raios &amp; Sombras</h2>
+      <p class="desc">Cantos arredondados suaves e sombras discretas. A sombra laranja é reservada para hover de elementos interativos.</p>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;">
+        <div class="ds-radius-box" style="border-radius:6px"><span>sm · 6px</span></div>
+        <div class="ds-radius-box" style="border-radius:10px"><span>md · 10px</span></div>
+        <div class="ds-radius-box" style="border-radius:14px"><span>lg · 14px</span></div>
+        <div class="ds-radius-box" style="border-radius:16px"><span>xl · 16px</span></div>
+        <div class="ds-radius-box" style="border-radius:50px"><span>pill</span></div>
+      </div>
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+        <div style="width:140px;height:90px;background:#fff;border-radius:10px;box-shadow:var(--distra-shadow-sm);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:0.72rem;color:var(--distra-gray-700);">shadow-sm</div>
+        <div style="width:140px;height:90px;background:#fff;border-radius:10px;box-shadow:var(--distra-shadow-md);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:0.72rem;color:var(--distra-gray-700);">shadow-md</div>
+        <div style="width:140px;height:90px;background:#fff;border-radius:10px;box-shadow:var(--distra-shadow-lg);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:0.72rem;color:var(--distra-gray-700);">shadow-lg</div>
+        <div style="width:140px;height:90px;background:#fff;border-radius:10px;box-shadow:var(--distra-shadow-orange);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:0.72rem;color:var(--distra-gray-700);">shadow-orange</div>
+      </div>
+    </section>
+
+    <!-- BOTÕES -->
+    <section class="ds-section" id="botoes">
+      <h2>Botões</h2>
+      <p class="desc">Primário para a ação principal da tela. Secundário e ghost para ações de apoio. Sucesso exclusivo para WhatsApp.</p>
+      <div class="ds-demo">
+        <button class="distra-btn distra-btn--primary">Acessar Portal</button>
+        <button class="distra-btn distra-btn--secondary">Ver Marcas</button>
+        <button class="distra-btn distra-btn--success">Falar no WhatsApp</button>
+      </div>
+      <div class="ds-demo ds-demo--dark">
+        <button class="distra-btn distra-btn--primary">Primário</button>
+        <button class="distra-btn distra-btn--ghost">Ghost (fundo escuro)</button>
+      </div>
+      <div class="ds-demo">
+        <button class="distra-btn distra-btn--primary distra-btn--sm">Pequeno</button>
+        <button class="distra-btn distra-btn--primary">Padrão</button>
+        <button class="distra-btn distra-btn--primary distra-btn--lg">Grande</button>
+      </div>
+      <div class="ds-code"><span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="attr">"distra-btn distra-btn--primary"</span><span class="tag">&gt;</span>Acessar Portal<span class="tag">&lt;/button&gt;</span></div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="ds-section" id="cards">
+      <h2>Cards</h2>
+      <p class="desc">Card base para conteúdo. Variante métrica para números de destaque (cobertura, KPIs).</p>
+      <div class="ds-demo" style="display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;">
+        <div class="distra-card distra-card--metric">
+          <div class="distra-metric-number">151</div>
+          <div class="distra-metric-label">Municípios com atendimento presencial</div>
+        </div>
+        <div class="distra-card distra-card--metric">
+          <div class="distra-metric-number">72h</div>
+          <div class="distra-metric-label">Prazo de entrega a partir do pedido</div>
+        </div>
+        <div class="distra-card distra-card--hover">
+          <strong style="color:var(--distra-navy-2);">Card interativo</strong>
+          <p style="margin:0.5rem 0 0;font-size:0.9rem;color:var(--distra-gray-700);">Passe o mouse para ver o efeito hover com borda laranja.</p>
+        </div>
+      </div>
+      <div class="ds-code"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="attr">"distra-card distra-card--metric"</span><span class="tag">&gt;</span><br>&nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="attr">"distra-metric-number"</span><span class="tag">&gt;</span>151<span class="tag">&lt;/div&gt;</span><br>&nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="attr">"distra-metric-label"</span><span class="tag">&gt;</span>Municípios...<span class="tag">&lt;/div&gt;</span><br><span class="tag">&lt;/div&gt;</span></div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="ds-section" id="badges">
+      <h2>Badges</h2>
+      <p class="desc">Etiquetas para status, categorias e marcadores.</p>
+      <div class="ds-demo">
+        <span class="distra-badge">Neutro</span>
+        <span class="distra-badge distra-badge--orange">Marca Foco</span>
+        <span class="distra-badge distra-badge--success">Entregue</span>
+      </div>
+    </section>
+
+    <!-- FORMS -->
+    <section class="ds-section" id="forms">
+      <h2>Formulários</h2>
+      <p class="desc">Campos de entrada com foco laranja. Essencial para o portal de vendedores e área do cliente.</p>
+      <div class="ds-demo" style="flex-direction:column;align-items:stretch;max-width:400px;">
+        <label class="distra-label" style="margin-bottom:0.4rem;display:block;">CNPJ do cliente</label>
+        <input class="distra-input" placeholder="00.000.000/0000-00">
+      </div>
+    </section>
+
+    <!-- TEXTO -->
+    <section class="ds-section" id="tipografia-comp">
+      <h2>Texto &amp; Eyebrow</h2>
+      <p class="desc">Classes utilitárias para títulos de seção com o padrão eyebrow + título usado no site.</p>
+      <div class="ds-demo" style="flex-direction:column;align-items:flex-start;">
+        <span class="distra-eyebrow">Onde Chegamos</span>
+        <h2 class="distra-title" style="margin-top:0.5rem;">Área de Cobertura</h2>
+      </div>
+      <div class="ds-code"><span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="attr">"distra-eyebrow"</span><span class="tag">&gt;</span>Onde Chegamos<span class="tag">&lt;/span&gt;</span><br><span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="attr">"distra-title"</span><span class="tag">&gt;</span>Área de Cobertura<span class="tag">&lt;/h2&gt;</span></div>
+    </section>
+
+    <!-- COMO USAR -->
+    <section class="ds-section" id="como-usar">
+      <h2>Como usar</h2>
+      <p class="desc">Para aplicar o design system em qualquer página nova:</p>
+      <div class="ds-code">
+        <span style="color:#6b7280">&lt;!-- No &lt;head&gt; --&gt;</span><br>
+        <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="attr">"stylesheet"</span> <span class="attr">href</span>=<span class="attr">"/design-system/tokens.css"</span><span class="tag">&gt;</span><br>
+        <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="attr">"stylesheet"</span> <span class="attr">href</span>=<span class="attr">"/design-system/components.css"</span><span class="tag">&gt;</span>
+      </div>
+      <p class="desc"><strong>No Figma:</strong> instale o plugin <em>Tokens Studio for Figma</em>, vá em Settings → Import e carregue o arquivo <code style="font-family:monospace;background:var(--distra-gray-100);padding:2px 6px;border-radius:4px;">tokens.json</code>. Todas as cores, tipografia e espaçamentos aparecem como estilos prontos.</p>
+      <p class="desc"><strong>Regra de ouro:</strong> nunca use valores hex ou tamanhos soltos. Sempre referencie um token. Se precisar de um valor novo, adicione primeiro ao <code style="font-family:monospace;background:var(--distra-gray-100);padding:2px 6px;border-radius:4px;">tokens.css</code>.</p>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
