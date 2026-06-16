@@ -52,7 +52,8 @@
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6vw;
+      gap: 1.5rem;
+      padding: 0 3vw;
       height: 68px;
       background: transparent;
       transition: background var(--transition), box-shadow var(--transition);
@@ -61,24 +62,39 @@
       background: var(--navy2);
       box-shadow: 0 2px 24px rgba(0,0,0,0.35);
     }
-    #nav .logo img { height: 40px; width: auto; display: block; }
+    #nav .logo { flex-shrink: 0; }
+    #nav .logo img { height: 38px; width: auto; display: block; }
     #nav ul {
-      display: flex; gap: 2rem; list-style: none;
+      display: flex; align-items: center; gap: 1.4rem; list-style: none;
     }
+    #nav ul li { white-space: nowrap; }
     #nav ul a {
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
       text-transform: uppercase; color: rgba(255,255,255,0.82);
+      white-space: nowrap;
       transition: color var(--transition);
     }
     #nav ul a:hover { color: var(--orange); }
     #nav .nav-cta {
       background: var(--orange); color: var(--white) !important;
-      padding: 0.5rem 1.2rem; border-radius: var(--radius);
-      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em;
-      text-transform: uppercase;
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;
+      text-transform: uppercase; white-space: nowrap;
       transition: background var(--transition), transform var(--transition);
     }
     #nav .nav-cta:hover { background: var(--orange2); transform: translateY(-1px); }
+    .nav-cta-alt {
+      background: transparent; color: var(--orange) !important;
+      border: 1.5px solid var(--orange);
+      padding: 0.42rem 0.95rem; border-radius: var(--radius);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;
+      text-transform: uppercase; white-space: nowrap;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+    .nav-cta-alt:hover {
+      background: var(--orange); color: var(--white) !important;
+      transform: translateY(-1px);
+    }
 
     /* hamburger */
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
@@ -529,9 +545,11 @@
     @media (max-width: 1024px) {
       .atuacao-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       #nav ul { display: none; }
       .hamburger { display: flex; }
+    }
+    @media (max-width: 768px) {
       .quem-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .mvv-grid { grid-template-columns: 1fr; }
       .atuacao-grid { grid-template-columns: repeat(2, 1fr); }
@@ -777,6 +795,8 @@
     <li><a href="#bem-estar">Bem-Estar</a></li>
     <li><a href="#marcas">Marcas</a></li>
     <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#fale-conosco">Fale Conosco</a></li>
+    <li><a href="#agenda-facil" class="nav-cta-alt">Agendamento</a></li>
     <li><a href="#portal" class="nav-cta">Portal B2B</a></li>
   </ul>
   <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -792,6 +812,9 @@
   <a href="#atuacao" onclick="closeMobile()">Atuação</a>
   <a href="#bem-estar" onclick="closeMobile()">Bem-Estar</a>
   <a href="#marcas" onclick="closeMobile()">Marcas</a>
+  <a href="#cobertura" onclick="closeMobile()">Cobertura</a>
+  <a href="#fale-conosco" onclick="closeMobile()">Fale Conosco</a>
+  <a href="#agenda-facil" onclick="closeMobile()">Agendamento</a>
   <a href="#portal" onclick="closeMobile()" style="color:var(--orange)">Portal B2B →</a>
 </div>
 
@@ -1422,7 +1445,105 @@
   </div>
 </section>
 
-<!-- ── CONTATO / FOOTER ──────────────────────────────────── -->
+<section id="agenda-facil">
+  <div class="agenda-inner reveal">
+    <div class="agenda-tag">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Agendamento de Entregas
+    </div>
+    <h2 class="agenda-title">Agenda Fácil</h2>
+    <p class="agenda-desc">Agende suas entregas de forma simples e rápida. Selecione a empresa, data e horário disponível — tudo em um só lugar, para todos os fornecedores do grupo.</p>
+    <div class="agenda-features">
+      <div class="agenda-feat">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Horários em tempo real
+      </div>
+      <div class="agenda-feat">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Múltiplos fornecedores
+      </div>
+      <div class="agenda-feat">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Confirmação imediata
+      </div>
+    </div>
+    <a href="https://portal-agendamento-fornecedor.vercel.app" target="_blank" rel="noopener" class="btn-agenda">
+      Acessar Agenda Fácil
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<section id="fale-conosco">
+  <div class="fc-grid">
+    <div class="fc-info reveal">
+      <div class="section-eyebrow">Fale Conosco</div>
+      <h2>Vamos conversar?</h2>
+      <p>Seja para se tornar um fornecedor parceiro, cliente ou candidatar-se a uma vaga — nossa equipe está pronta para te atender.</p>
+      <div class="fc-item">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Cachoeirinha, RS — Brasil
+      </div>
+      <div class="fc-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (51) 99496-5754
+      </div>
+      <div class="fc-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        comercial@distraalimentos.com.br
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="tipo-group">
+        <button type="button" class="tipo-btn ativo" onclick="setTipoContato(this,'Quero ser Fornecedor')">Quero ser Fornecedor</button>
+        <button type="button" class="tipo-btn" onclick="setTipoContato(this,'Quero ser Cliente')">Quero ser Cliente</button>
+        <button type="button" class="tipo-btn" onclick="setTipoContato(this,'Trabalhe Conosco')">Trabalhe Conosco</button>
+      </div>
+      <form id="fc-form" action="https://formsubmit.co/comercial@distraalimentos.com.br" method="POST">
+        <input type="hidden" name="_subject" value="Novo contato pelo site Distra">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="assunto" id="fc-tipo" value="Quero ser Fornecedor">
+        <div class="fg-row">
+          <div class="fg">
+            <label>Nome *</label>
+            <input type="text" name="nome" placeholder="Seu nome completo" required>
+          </div>
+          <div class="fg" id="fc-empresa">
+            <label id="fc-empresa-label">Empresa</label>
+            <input type="text" name="empresa" id="fc-empresa-input" placeholder="Nome da empresa">
+          </div>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label>E-mail *</label>
+            <input type="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="fg">
+            <label>Telefone</label>
+            <input type="tel" name="telefone" placeholder="(51) 99999-9999">
+          </div>
+        </div>
+        <div class="fg">
+          <label>Mensagem *</label>
+          <textarea name="mensagem" placeholder="Conte um pouco mais sobre você ou sua empresa..." required></textarea>
+        </div>
+                <label style="display:flex;align-items:flex-start;gap:8px;font-size:0.78rem;color:var(--gray400);font-weight:400;text-transform:none;letter-spacing:0;margin-bottom:1rem;cursor:pointer;">
+          <input type="checkbox" name="consentimento" required style="margin-top:3px;flex-shrink:0;width:auto;">
+          <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="#" style="color:var(--orange);text-decoration:underline;">Política de Privacidade</a>, em conformidade com a LGPD.</span>
+        </label>
+        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+      </form>
+      <div class="fc-success" id="fc-success">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Mensagem enviada!</h3>
+        <p>Nossa equipe entrará em contato em breve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ── CONTATO / FOOTER ──────────────────────────────────── -->
 <footer id="contato">
   <div class="contato-inner">
     <div class="contato-brand">
@@ -1538,7 +1659,27 @@
       dot.addEventListener('mouseleave', () => tt.setAttribute('display','none'));
     });
   })();
-</script>
+
+    // Fale Conosco — seletor de tipo de contato + campo dinâmico
+    function setTipoContato(btn, tipo) {
+      document.querySelectorAll('.tipo-btn').forEach(b => b.classList.remove('ativo'));
+      btn.classList.add('ativo');
+      document.getElementById('fc-tipo').value = tipo;
+
+      var label = document.getElementById('fc-empresa-label');
+      var input = document.getElementById('fc-empresa-input');
+      if (tipo === 'Trabalhe Conosco') {
+        label.textContent = 'Cargo desejado';
+        input.placeholder = 'Ex: Representante comercial';
+        input.name = 'cargo_desejado';
+      } else {
+        label.textContent = 'Empresa';
+        input.placeholder = 'Nome da empresa';
+        input.name = 'empresa';
+      }
+    }
+
+  </script>
 
 <!-- ── WHATSAPP FLUTUANTE ─────────────────────────────── -->
 <a href="https://wa.me/5551994965754" target="_blank" rel="noopener" 
@@ -1694,7 +1835,55 @@
       .cobertura-card { flex: unset; }
     }
 
-</style>
+
+    /* ── SEÇÕES NOVAS: AGENDA + FALE CONOSCO ── */
+    /* ── AGENDA FÁCIL ── */
+    #agenda-facil { background: var(--gray50); padding: 80px 6vw; text-align: center; }
+    .agenda-inner { max-width: 640px; margin: 0 auto; }
+    .agenda-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(244,116,33,0.1); color: var(--orange); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 1.4rem; }
+    .agenda-tag svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .agenda-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; color: var(--navy); margin-bottom: 1rem; }
+    .agenda-desc { font-size: 1rem; color: var(--gray700); line-height: 1.75; max-width: 500px; margin: 0 auto 2.2rem; }
+    .agenda-features { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2.4rem; flex-wrap: wrap; }
+    .agenda-feat { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--gray700); font-weight: 500; }
+    .agenda-feat svg { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .btn-agenda { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: var(--white); padding: 1rem 2.4rem; border-radius: var(--radius); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: background var(--transition), transform var(--transition), box-shadow var(--transition); }
+    .btn-agenda:hover { background: var(--orange2); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,116,33,0.35); }
+    .btn-agenda svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    /* ── FALE CONOSCO ── */
+    #fale-conosco { background: var(--white); padding: 80px 6vw; }
+    .fc-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+    .fc-info h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 1rem; }
+    .fc-info p { font-size: 0.95rem; color: var(--gray700); line-height: 1.75; margin-bottom: 2rem; }
+    .fc-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--gray700); margin-bottom: 0.75rem; }
+    .fc-item svg { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .tipo-group { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .tipo-btn { padding: 0.45rem 1rem; border-radius: 20px; border: 1.5px solid var(--gray100); background: var(--white); font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; color: var(--gray400); cursor: pointer; transition: all var(--transition); }
+    .tipo-btn:hover, .tipo-btn.ativo { border-color: var(--orange); color: var(--orange); background: rgba(244,116,33,0.06); }
+    .tipo-btn.ativo { background: rgba(244,116,33,0.1); }
+    .fg { margin-bottom: 1rem; }
+    .fg label { display: block; font-size: 0.72rem; font-weight: 700; color: var(--gray700); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .fg input, .fg textarea { width: 100%; padding: 0.72rem 1rem; border: 1.5px solid var(--gray100); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.9rem; color: var(--navy); background: var(--white); outline: none; transition: border-color var(--transition); }
+    .fg input:focus, .fg textarea:focus { border-color: var(--orange); }
+    .fg textarea { min-height: 110px; resize: vertical; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .fc-success { display: none; text-align: center; padding: 2.5rem 1rem; }
+    .fc-success svg { width: 48px; height: 48px; stroke: var(--orange); fill: none; stroke-width: 1.5; margin-bottom: 1rem; }
+    .fc-success h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .fc-success p { font-size: 0.88rem; color: var(--gray400); }
+    .fc-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .fg-row { grid-template-columns: 1fr; }
+
+    /* CSS botão enviar */
+    .btn-enviar {
+      width: 100%; background: var(--orange); color: var(--white);
+      border: none; border-radius: var(--radius); padding: 1rem;
+      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-enviar:hover { background: var(--orange2); transform: translateY(-2px); }
+  </style>
 
 </body>
 </html>
