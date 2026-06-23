@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — Distra Alimentos</title>
+  <meta name="description" content="Política de Privacidade da Distra Alimentos. Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:    #11111f;
+      --navy2:   #1a1f3a;
+      --orange:  #f47421;
+      --orange2: #e5651a;
+      --white:   #ffffff;
+      --gray50:  #f7f7f8;
+      --gray100: #ebebed;
+      --gray400: #9a9aaa;
+      --gray700: #44445a;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --radius: 6px;
+      --transition: 0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--navy); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    #nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw; height: 68px;
+      background: var(--navy2);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+    #nav .logo img { height: 38px; width: auto; display: block; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+      transition: color var(--transition);
+    }
+    .nav-back:hover { color: var(--orange); }
+    .nav-back svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* HERO */
+    .policy-hero {
+      background: var(--navy2);
+      padding: 60px 6vw 70px;
+      position: relative; overflow: hidden;
+    }
+    .policy-hero::after {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 4px; height: 100%;
+      background: var(--orange);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .policy-hero-inner { position: relative; z-index: 2; max-width: 800px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 1.2rem;
+    }
+    .eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--orange); }
+    .policy-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700; line-height: 1;
+      color: var(--white); text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .policy-hero p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* CONTENT */
+    .policy-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 6vw 80px;
+    }
+
+    /* INDEX */
+    .policy-index {
+      background: var(--gray50);
+      border-radius: 10px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 3rem;
+      border-left: 3px solid var(--orange);
+    }
+    .policy-index h2 {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--navy2); margin-bottom: 1rem;
+    }
+    .policy-index ol {
+      padding-left: 1.2rem;
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .policy-index ol li a {
+      font-size: 0.85rem; color: var(--gray700);
+      transition: color var(--transition);
+    }
+    .policy-index ol li a:hover { color: var(--orange); }
+
+    /* SECTIONS */
+    .policy-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--gray100);
+    }
+    .policy-section:last-child { border-bottom: none; margin-bottom: 0; }
+    .section-num {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.02em;
+      color: var(--navy2); margin-bottom: 1.2rem;
+    }
+    .policy-section p {
+      font-size: 0.92rem; line-height: 1.8;
+      color: var(--gray700); margin-bottom: 1rem;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul, .policy-section ol {
+      padding-left: 1.4rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .policy-section li {
+      font-size: 0.92rem; line-height: 1.7;
+      color: var(--gray700);
+    }
+    .policy-section strong { color: var(--navy); font-weight: 600; }
+
+    .highlight-box {
+      background: var(--gray50);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.2rem 0;
+      border-left: 3px solid var(--orange);
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 0.88rem; }
+
+    /* FOOTER */
+    #footer {
+      background: var(--navy);
+      padding: 40px 6vw;
+      text-align: center;
+    }
+    #footer img { height: 32px; width: auto; display: block; margin: 0 auto 1rem; }
+    #footer p {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+    }
+    #footer a { color: var(--orange); }
+
+    @media (max-width: 600px) {
+      .policy-body { padding: 40px 5vw 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">
+    <a href="/">
+      <img src="/logos/distra-logo.svg" alt="Distra Alimentos" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span style="display:none; font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:700; color:#fff; letter-spacing:0.04em;">DISTRA ALIMENTOS</span>
+    </a>
+  </div>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Voltar ao site
+  </a>
+</nav>
+
+<div class="policy-hero">
+  <div class="hero-grid"></div>
+  <div class="policy-hero-inner">
+    <div class="eyebrow">Distra Alimentos</div>
+    <h1>Política de<br>Privacidade</h1>
+    <p>Última atualização: junho de 2025 &nbsp;·&nbsp; Vigência: imediata</p>
+  </div>
+</div>
+
+<div class="policy-body">
+
+  <div class="policy-index">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#controlador">Identificação do Controlador</a></li>
+      <li><a href="#dados-coletados">Dados Pessoais Coletados</a></li>
+      <li><a href="#finalidade">Finalidade do Tratamento</a></li>
+      <li><a href="#base-legal">Base Legal</a></li>
+      <li><a href="#compartilhamento">Compartilhamento de Dados</a></li>
+      <li><a href="#retencao">Retenção e Exclusão</a></li>
+      <li><a href="#seguranca">Segurança</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#direitos">Direitos do Titular</a></li>
+      <li><a href="#contato">Contato e Canal de Privacidade</a></li>
+      <li><a href="#atualizacoes">Atualizações desta Política</a></li>
+    </ol>
+  </div>
+
+  <div class="policy-section" id="controlador">
+    <div class="section-num">01</div>
+    <h2>Identificação do Controlador</h2>
+    <p>A <strong>Distra Alimentos</strong>, empresa estabelecida em Cachoeirinha, Rio Grande do Sul, Brasil, é a controladora dos dados pessoais tratados por meio deste site, nos termos da Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).</p>
+    <p>Esta Política de Privacidade descreve quais dados coletamos, como os utilizamos, com quem os compartilhamos e quais são os seus direitos como titular de dados.</p>
+  </div>
+
+  <div class="policy-section" id="dados-coletados">
+    <div class="section-num">02</div>
+    <h2>Dados Pessoais Coletados</h2>
+    <p>Coletamos dados pessoais apenas quando você os fornece voluntariamente por meio do formulário de contato disponível neste site. Os dados solicitados são:</p>
+    <ul>
+      <li><strong>Nome completo</strong></li>
+      <li><strong>Nome da empresa</strong> (ou cargo desejado, no caso de candidatos a vagas)</li>
+      <li><strong>Endereço de e-mail</strong></li>
+      <li><strong>Número de telefone</strong> (opcional)</li>
+      <li><strong>Mensagem</strong> enviada pelo formulário</li>
+      <li><strong>Tipo de contato</strong> selecionado (Fornecedor, Cliente ou Trabalhe Conosco)</li>
+    </ul>
+    <p>Não coletamos dados sensíveis, dados de menores de 18 anos, dados de pagamento nem realizamos qualquer tipo de criação de conta ou cadastro neste site.</p>
+  </div>
+
+  <div class="policy-section" id="finalidade">
+    <div class="section-num">03</div>
+    <h2>Finalidade do Tratamento</h2>
+    <p>Os dados coletados são utilizados exclusivamente para:</p>
+    <ul>
+      <li>Responder ao contato iniciado por você;</li>
+      <li>Avaliar parcerias comerciais com fornecedores;</li>
+      <li>Atender solicitações de clientes e potenciais clientes do varejo;</li>
+      <li>Analisar candidaturas a vagas de trabalho.</li>
+    </ul>
+    <p>Não utilizamos seus dados para envio de publicidade, perfil comportamental, venda de dados a terceiros ou qualquer finalidade diferente da que motivou o contato.</p>
+  </div>
+
+  <div class="policy-section" id="base-legal">
+    <div class="section-num">04</div>
+    <h2>Base Legal</h2>
+    <p>O tratamento dos dados pessoais coletados pelo formulário de contato é fundamentado nas seguintes bases legais previstas na LGPD (art. 7º):</p>
+    <ul>
+      <li><strong>Consentimento (art. 7º, I):</strong> você fornece seus dados e concede consentimento de forma livre e informada ao marcar o campo obrigatório no formulário.</li>
+      <li><strong>Legítimo interesse (art. 7º, IX):</strong> para responder ao contato que você mesmo iniciou, no âmbito de uma relação comercial pré-contratual.</li>
+    </ul>
+    <p>Você pode revogar seu consentimento a qualquer momento entrando em contato conosco pelo canal indicado na seção 10.</p>
+  </div>
+
+  <div class="policy-section" id="compartilhamento">
+    <div class="section-num">05</div>
+    <h2>Compartilhamento de Dados</h2>
+    <p>Seus dados são encaminhados exclusivamente para o serviço de entrega de formulários <strong>FormSubmit</strong> (formsubmit.co), que atua como operador de dados e realiza o repasse do conteúdo ao nosso e-mail institucional. O FormSubmit não armazena permanentemente seus dados pessoais após o encaminhamento.</p>
+    <p>Não compartilhamos, vendemos ou cedemos seus dados a outros terceiros, parceiros comerciais, plataformas de publicidade ou quaisquer outras entidades.</p>
+    <div class="highlight-box">
+      <p>Em hipóteses legais — como cumprimento de obrigação regulatória ou ordem judicial — poderemos ser obrigados a compartilhar dados com autoridades públicas competentes.</p>
+    </div>
+  </div>
+
+  <div class="policy-section" id="retencao">
+    <div class="section-num">06</div>
+    <h2>Retenção e Exclusão</h2>
+    <p>Os dados recebidos por e-mail são mantidos pelo tempo necessário para atender a finalidade do contato ou enquanto existir uma relação comercial ativa.</p>
+    <p>Após o encerramento da finalidade, os dados são excluídos ou anonimizados, salvo quando a retenção for exigida por obrigação legal ou regulatória.</p>
+    <p>Para solicitar a exclusão dos seus dados, utilize o canal de contato indicado na seção 10.</p>
+  </div>
+
+  <div class="policy-section" id="seguranca">
+    <div class="section-num">07</div>
+    <h2>Segurança</h2>
+    <p>Adotamos medidas técnicas e organizacionais adequadas para proteger os dados pessoais contra acesso não autorizado, alteração, divulgação ou destruição, incluindo:</p>
+    <ul>
+      <li>Comunicação criptografada via HTTPS (SSL/TLS) em todo o site;</li>
+      <li>Controle de acesso restrito ao e-mail institucional;</li>
+      <li>Política de Content Security Policy (CSP) ativa no site.</li>
+    </ul>
+    <p>Nenhum método de transmissão ou armazenamento eletrônico é 100% seguro. Em caso de incidente que envolva seus dados, notificaremos os titatulares afetados e a Autoridade Nacional de Proteção de Dados (ANPD) conforme exigido pela LGPD.</p>
+  </div>
+
+  <div class="policy-section" id="cookies">
+    <div class="section-num">08</div>
+    <h2>Cookies</h2>
+    <p>Este site utiliza apenas cookies técnicos estritamente necessários para o funcionamento da navegação (como rolagem suave e comportamento do menu). Não utilizamos cookies de rastreamento, publicidade ou analytics de terceiros.</p>
+    <p>Você pode desativar cookies nas configurações do seu navegador, o que não afetará o acesso ao conteúdo deste site.</p>
+  </div>
+
+  <div class="policy-section" id="direitos">
+    <div class="section-num">09</div>
+    <h2>Direitos do Titular</h2>
+    <p>Conforme a LGPD (art. 18), você tem os seguintes direitos em relação aos seus dados pessoais:</p>
+    <ul>
+      <li><strong>Confirmação e acesso:</strong> saber se tratamos seus dados e obter cópia deles;</li>
+      <li><strong>Correção:</strong> solicitar a atualização de dados incompletos ou desatualizados;</li>
+      <li><strong>Anonimização, bloqueio ou eliminação:</strong> de dados desnecessários ou tratados em desconformidade;</li>
+      <li><strong>Portabilidade:</strong> obter seus dados em formato estruturado;</li>
+      <li><strong>Eliminação:</strong> solicitar a exclusão dos dados tratados com base no consentimento;</li>
+      <li><strong>Revogação do consentimento:</strong> a qualquer momento, sem prejuízo aos tratamentos já realizados;</li>
+      <li><strong>Informação:</strong> saber com quais entidades compartilhamos seus dados;</li>
+      <li><strong>Oposição:</strong> se discordar de alguma finalidade de tratamento.</li>
+    </ul>
+    <p>Para exercer qualquer um desses direitos, entre em contato pelo canal indicado na seção 10. Responderemos em até 15 dias úteis.</p>
+  </div>
+
+  <div class="policy-section" id="contato">
+    <div class="section-num">10</div>
+    <h2>Contato e Canal de Privacidade</h2>
+    <p>Para exercer seus direitos, esclarecer dúvidas sobre esta Política ou registrar qualquer solicitação relacionada a dados pessoais, entre em contato com o responsável pela privacidade da Distra Alimentos:</p>
+    <div class="highlight-box">
+      <p><strong>Distra Alimentos</strong><br>
+      Cachoeirinha, RS — Brasil<br>
+      E-mail: <a href="mailto:comercial@distraalimentos.com.br" style="color:var(--orange);">comercial@distraalimentos.com.br</a><br>
+      WhatsApp: <a href="https://wa.me/5551994965754" style="color:var(--orange);">(51) 99496-5754</a></p>
+    </div>
+  </div>
+
+  <div class="policy-section" id="atualizacoes">
+    <div class="section-num">11</div>
+    <h2>Atualizações desta Política</h2>
+    <p>Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas, em requisitos legais ou em funcionalidades do site. A data da última atualização será sempre indicada no topo desta página.</p>
+    <p>Recomendamos que você consulte esta página periodicamente. O uso continuado do site após alterações implica a aceitação da versão vigente.</p>
+  </div>
+
+</div>
+
+<footer id="footer">
+  <img src="/logos/distra-logo.svg" alt="Distra Alimentos" onerror="this.style.display='none'">
+  <p>© 2025 Distra Alimentos. Todos os direitos reservados.<br>
+  Cachoeirinha, RS — Brasil &nbsp;·&nbsp;
+  <a href="mailto:comercial@distraalimentos.com.br">comercial@distraalimentos.com.br</a></p>
+</footer>
+
+</body>
+</html>
