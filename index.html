@@ -1664,6 +1664,14 @@
       }
     }
 
+    // Oculta botões flutuantes quando o rodapé está visível
+    var floatObserver = new IntersectionObserver(function(entries) {
+      var hidden = entries[0].isIntersecting;
+      document.getElementById('wa-float').classList.toggle('float-hidden', hidden);
+      document.getElementById('catalogo-float').classList.toggle('float-hidden', hidden);
+    }, { threshold: 0.1 });
+    floatObserver.observe(document.getElementById('contato'));
+
   </script>
 
 <!-- ── WHATSAPP FLUTUANTE ─────────────────────────────── -->
@@ -1677,6 +1685,16 @@
 </a>
 
 <style>
+  #wa-float,
+  #catalogo-float {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+  #wa-float.float-hidden,
+  #catalogo-float.float-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
   #wa-float {
     position: fixed;
     bottom: 28px;
@@ -1693,7 +1711,7 @@
     font-size: 0.85rem;
     font-weight: 600;
     box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, padding 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     text-decoration: none;
     overflow: hidden;
     max-width: 220px;
@@ -1748,7 +1766,7 @@
     font-size: 0.85rem;
     font-weight: 600;
     box-shadow: 0 4px 20px rgba(17,17,31,0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
     text-decoration: none;
   }
   #catalogo-float svg {
