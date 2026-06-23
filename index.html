@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Distra Alimentos — Distribuição de Alimentos Saudáveis</title>
   <meta name="description" content="Conectamos marcas de qualidade ao varejo do Rio Grande do Sul. Distribuição de alimentos saudáveis para supermercados, lojas naturais e conveniências." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none';" />
 
   <!-- Open Graph / WhatsApp / redes sociais -->
   <meta property="og:type" content="website" />
@@ -20,6 +21,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Distra Alimentos",
+    "description": "Distribuidora de alimentos saudáveis no Rio Grande do Sul.",
+    "url": "https://www.distraalimentos.com.br",
+    "telephone": "+55-51-99496-5754",
+    "email": "comercial@distraalimentos.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cachoeirinha",
+      "addressRegion": "RS",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Rio Grande do Sul"
+    },
+    "sameAs": [
+      "https://www.instagram.com/distraalimentos",
+      "https://www.linkedin.com/company/distra-alimentos/"
+    ]
+  }
+  </script>
 
   <style>
     /* ── TOKENS ─────────────────────────────────────────── */
@@ -83,18 +110,6 @@
       transition: background var(--transition), transform var(--transition);
     }
     #nav .nav-cta:hover { background: var(--orange2); transform: translateY(-1px); }
-    .nav-cta-alt {
-      background: transparent; color: var(--orange) !important;
-      border: 1.5px solid var(--orange);
-      padding: 0.42rem 0.95rem; border-radius: var(--radius);
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;
-      text-transform: uppercase; white-space: nowrap;
-      transition: background var(--transition), color var(--transition), transform var(--transition);
-    }
-    .nav-cta-alt:hover {
-      background: var(--orange); color: var(--white) !important;
-      transform: translateY(-1px);
-    }
 
     /* hamburger */
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
@@ -796,7 +811,6 @@
     <li><a href="#marcas">Marcas</a></li>
     <li><a href="#cobertura">Cobertura</a></li>
     <li><a href="#fale-conosco">Fale Conosco</a></li>
-    <li><a href="#agenda-facil" class="nav-cta-alt">Agendamento</a></li>
     <li><a href="#portal" class="nav-cta">Portal B2B</a></li>
   </ul>
   <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -814,7 +828,6 @@
   <a href="#marcas" onclick="closeMobile()">Marcas</a>
   <a href="#cobertura" onclick="closeMobile()">Cobertura</a>
   <a href="#fale-conosco" onclick="closeMobile()">Fale Conosco</a>
-  <a href="#agenda-facil" onclick="closeMobile()">Agendamento</a>
   <a href="#portal" onclick="closeMobile()" style="color:var(--orange)">Portal B2B →</a>
 </div>
 
@@ -837,7 +850,7 @@
         Acessar Portal B2B
       </a>
       <a href="#marcas" class="btn-outline">Ver Marcas</a>
-      <a href="https://web.catalogond.com/?api=wNg9bncUdYplijGJUdXNkbPPBcZ7Cvp0o0zs-Pl8jrANVSBfHmMzDNV569YoWlp34x7yVL50Yd8fc4jA4HnEZLtfmT-FLhytdpO8OvNOGTSd6tNmDi1k6WHraGOG7NHn" target="_blank" rel="noopener" class="btn-outline">
+      <a href="https://web.catalogond.com/?api=wNg9bncUdYplijGJUdXNkbPPBcZ7Cvp0o0zs-Pl8jrANVSBfHmMzDNV569YoWlp34x7yVL50Yd8fc4jA4HnEZLtfmT-FLhytdpO8OvNOGTSd6tNmDi1k6WHraGOG7NHn" target="_blank" rel="noopener noreferrer" class="btn-outline">
         <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         Catálogo Virtual
       </a>
@@ -1103,132 +1116,132 @@
         </div>
       </div>
       <div class="marcas-grid reveal">
-        <a href="https://www.seustok.com.br/produto/busca?q=&joy" target="_blank" rel="noopener" class="marca-card" title="Ver produtos &Joy no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=&joy" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos &Joy no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/joy.svg" alt="&Joy" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=almaromi" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Almaromi no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=almaromi" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Almaromi no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/almaromi.svg" alt="Almaromi" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=apis+flora" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Apis Flora no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=apis+flora" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Apis Flora no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/apis-flora.svg" alt="Apis Flora" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=aruba" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Aruba no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=aruba" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Aruba no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/aruba.svg" alt="Aruba" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=casarao" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Casarão no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=casarao" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Casarão no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/casarao.svg" alt="Casarão" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=coffee+mais" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Coffee Mais no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=coffee+mais" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Coffee Mais no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/coffee-mais.svg" alt="Coffee Mais" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=copra" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Copra no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=copra" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Copra no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/copra.svg" alt="Copra" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=dobro" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Dobro no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=dobro" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Dobro no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/dobro.svg" alt="Dobro" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=flormel" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Flormel no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=flormel" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Flormel no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/flormel.svg" alt="Flormel" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=grano+square" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Grano Square no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=grano+square" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Grano Square no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/grano-square.svg" alt="Grano Square" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=integralmedica" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Integralmédica no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=integralmedica" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Integralmédica no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/integralmedica.svg" alt="Integralmédica" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=laciella" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Laciella no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=laciella" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Laciella no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/laciella.svg" alt="Laciella" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=mais+pura" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Mais Pura no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=mais+pura" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Mais Pura no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/mais-pura.svg" alt="Mais Pura" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=nutrata" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Nutrata no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=nutrata" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Nutrata no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/nutrata.svg" alt="Nutrata" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=nude" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Nude no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=nude" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Nude no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/nude.svg" alt="Nude" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=okoshi" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Okoshi no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=okoshi" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Okoshi no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/okoshi.svg" alt="Okoshi" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=piracanjuba" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Piracanjuba no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=piracanjuba" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Piracanjuba no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/piracanjuba.svg" alt="Piracanjuba" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=roots+to+go" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Roots to Go no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=roots+to+go" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Roots to Go no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/roots-to-go.svg" alt="Roots to Go" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=schar" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Schär no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=schar" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Schär no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/schar.svg" alt="Schär" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=sesamo+real" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Sésamo Real no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=sesamo+real" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Sésamo Real no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/sesamo-real.svg" alt="Sésamo Real" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=stevita" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Stevita no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=stevita" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Stevita no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/stevita.svg" alt="Stevita" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=suavipan" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Suavipan no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=suavipan" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Suavipan no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/suavipan.svg" alt="Suavipan" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=urbano" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Urbano no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=urbano" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Urbano no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/urbano.svg" alt="Urbano" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=sao+francisco" target="_blank" rel="noopener" class="marca-card" title="Ver produtos V. São Francisco no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=sao+francisco" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos V. São Francisco no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/sao-francisco.svg" alt="V. São Francisco" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=vitalin" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Vitalin no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=vitalin" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Vitalin no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/vitalin.svg" alt="Vitalin" loading="lazy" />
           </div>
         </a>
-        <a href="https://www.seustok.com.br/produto/busca?q=winstage" target="_blank" rel="noopener" class="marca-card" title="Ver produtos Winstage no portal B2B">
+        <a href="https://www.seustok.com.br/produto/busca?q=winstage" target="_blank" rel="noopener noreferrer" class="marca-card" title="Ver produtos Winstage no portal B2B">
           <div class="marca-logo-wrap">
             <img src="/logos/winstage.svg" alt="Winstage" loading="lazy" />
           </div>
@@ -1424,7 +1437,7 @@
           Finalize o pedido e acompanhe a entrega
         </div>
       </div>
-      <a href="https://www.seustok.com.br/loja/distraalimentos" target="_blank" rel="noopener" class="btn-portal">
+      <a href="https://www.seustok.com.br/loja/distraalimentos" target="_blank" rel="noopener noreferrer" class="btn-portal">
         Acessar o Portal
         <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       </a>
@@ -1437,40 +1450,11 @@
       <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); text-align:center; max-width:180px; line-height:1.5;">
         Dúvidas? Fale com nossa equipe pelo WhatsApp
       </p>
-      <a href="https://wa.me/5551994965754" target="_blank" rel="noopener" class="btn-outline" style="border-color:rgba(255,255,255,0.2); font-size:0.8rem; padding:0.6rem 1.2rem;">
+      <a href="https://wa.me/5551994965754" target="_blank" rel="noopener noreferrer" class="btn-outline" style="border-color:rgba(255,255,255,0.2); font-size:0.8rem; padding:0.6rem 1.2rem;">
         <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Falar no WhatsApp
       </a>
     </div>
-  </div>
-</section>
-
-<section id="agenda-facil">
-  <div class="agenda-inner reveal">
-    <div class="agenda-tag">
-      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Agendamento de Entregas
-    </div>
-    <h2 class="agenda-title">Agenda Fácil</h2>
-    <p class="agenda-desc">Agende suas entregas de forma simples e rápida. Selecione a empresa, data e horário disponível — tudo em um só lugar, para todos os fornecedores do grupo.</p>
-    <div class="agenda-features">
-      <div class="agenda-feat">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Horários em tempo real
-      </div>
-      <div class="agenda-feat">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Múltiplos fornecedores
-      </div>
-      <div class="agenda-feat">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        Confirmação imediata
-      </div>
-    </div>
-    <a href="https://portal-agendamento-fornecedor.vercel.app" target="_blank" rel="noopener" class="btn-agenda">
-      Acessar Agenda Fácil
-      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
   </div>
 </section>
 
@@ -1503,6 +1487,7 @@
         <input type="hidden" name="_subject" value="Novo contato pelo site Distra">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" autocomplete="off">
         <input type="hidden" name="assunto" id="fc-tipo" value="Quero ser Fornecedor">
         <div class="fg-row">
           <div class="fg">
@@ -1530,7 +1515,7 @@
         </div>
                 <label style="display:flex;align-items:flex-start;gap:8px;font-size:0.78rem;color:var(--gray400);font-weight:400;text-transform:none;letter-spacing:0;margin-bottom:1rem;cursor:pointer;">
           <input type="checkbox" name="consentimento" required style="margin-top:3px;flex-shrink:0;width:auto;">
-          <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="#" style="color:var(--orange);text-decoration:underline;">Política de Privacidade</a>, em conformidade com a LGPD.</span>
+          <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="/politica-privacidade" style="color:var(--orange);text-decoration:underline;">Política de Privacidade</a>, em conformidade com a LGPD.</span>
         </label>
         <button type="submit" class="btn-enviar">Enviar Mensagem</button>
       </form>
@@ -1563,7 +1548,7 @@
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
-          <a href="https://wa.me/5551994965754" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://wa.me/5551994965754" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1574,13 +1559,13 @@
     <div class="contato-info">
       <h4>Redes Sociais</h4>
       <div class="social-links">
-        <a href="https://instagram.com/distraalimentos" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <a href="https://instagram.com/distraalimentos" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
-        <a href="https://wa.me/5551994965754" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+        <a href="https://wa.me/5551994965754" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
         </a>
-        <a href="https://www.linkedin.com/company/distra-alimentos/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/distra-alimentos/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
@@ -1589,7 +1574,7 @@
         <ul>
           <li>
             <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <a href="https://www.seustok.com.br/loja/distraalimentos" target="_blank" rel="noopener">seustok.com.br/distraalimentos</a>
+            <a href="https://www.seustok.com.br/loja/distraalimentos" target="_blank" rel="noopener noreferrer">seustok.com.br/distraalimentos</a>
           </li>
         </ul>
       </div>
@@ -1682,7 +1667,7 @@
   </script>
 
 <!-- ── WHATSAPP FLUTUANTE ─────────────────────────────── -->
-<a href="https://wa.me/5551994965754" target="_blank" rel="noopener" 
+<a href="https://wa.me/5551994965754" target="_blank" rel="noopener noreferrer" 
    id="wa-float" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -1735,7 +1720,7 @@
 
 
 <!-- ── CATÁLOGO VIRTUAL FLUTUANTE ────────────────────────── -->
-<a href="https://web.catalogond.com/?api=wNg9bncUdYplijGJUdXNkbPPBcZ7Cvp0o0zs-Pl8jrANVSBfHmMzDNV569YoWlp34x7yVL50Yd8fc4jA4HnEZLtfmT-FLhytdpO8OvNOGTSd6tNmDi1k6WHraGOG7NHn" target="_blank" rel="noopener"
+<a href="https://web.catalogond.com/?api=wNg9bncUdYplijGJUdXNkbPPBcZ7Cvp0o0zs-Pl8jrANVSBfHmMzDNV569YoWlp34x7yVL50Yd8fc4jA4HnEZLtfmT-FLhytdpO8OvNOGTSd6tNmDi1k6WHraGOG7NHn" target="_blank" rel="noopener noreferrer"
    id="catalogo-float" aria-label="Ver Catálogo Virtual">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"
        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1836,20 +1821,6 @@
     }
 
 
-    /* ── SEÇÕES NOVAS: AGENDA + FALE CONOSCO ── */
-    /* ── AGENDA FÁCIL ── */
-    #agenda-facil { background: var(--gray50); padding: 80px 6vw; text-align: center; }
-    .agenda-inner { max-width: 640px; margin: 0 auto; }
-    .agenda-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(244,116,33,0.1); color: var(--orange); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 1.4rem; }
-    .agenda-tag svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .agenda-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; color: var(--navy); margin-bottom: 1rem; }
-    .agenda-desc { font-size: 1rem; color: var(--gray700); line-height: 1.75; max-width: 500px; margin: 0 auto 2.2rem; }
-    .agenda-features { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2.4rem; flex-wrap: wrap; }
-    .agenda-feat { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--gray700); font-weight: 500; }
-    .agenda-feat svg { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-    .btn-agenda { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: var(--white); padding: 1rem 2.4rem; border-radius: var(--radius); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: background var(--transition), transform var(--transition), box-shadow var(--transition); }
-    .btn-agenda:hover { background: var(--orange2); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,116,33,0.35); }
-    .btn-agenda svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     /* ── FALE CONOSCO ── */
     #fale-conosco { background: var(--white); padding: 80px 6vw; }
     .fc-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
@@ -1887,3 +1858,4 @@
 
 </body>
 </html>
+
